@@ -1,79 +1,83 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Tecnologia</title>
-        <link rel="icon" href="icons8-computadora-16.png" type="imagen/x-icon">
-        <style>
-        body {
-            color: blue;
-           
-        }
-        body {
-            background-color: rgb(176, 176, 174);
-           
-        }
-        h1 {
-            font-family: Arial;
-           
-        }
-        .Lista 
-        body {
-            font-size: 16px;
-            
-        }
-        .Portada{width: 20%;
-        margin: 1 auto}
-        .Encabezado {
-            width: 20%;
-            margin: 1 auto;
-            background-color: rgb(236, 40, 10);
-        }
-        footer {
-            width: 30%;
-            margin-right: 15%;
-            margin-left: auto ;
-            background-color: rgb(252, 252, 252);
-        }
-        .Lista {
-             background-color: rgb(241, 241, 1);
-             width: 20%;
-             margin: 1 auto;
-             font-size: 16px}
-            
-            
-    </style>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Tecnología</title>
+  <link rel="icon" href="icons8-computadora-16.png" type="image/x-icon">
 
-    </head>
-    
-    <body>
-        <div class="Encabezado"><h1>Bienvenidos a la web del curso.</h1></div>
-        <div class="Portada"><img src="mono culo rojo.jpg" width="200" height="200"></div>
-        <div class=Lista><ul>
-            <li><a href="Tema1.html">Aquí el enlace para el primer tema.</a></li>
-            <li><a href="Tema2.html">Aquí el enlace para el segundo tema.</a></li>
-            <li><a href="Tema3.html">Aquí el enlace para el tercer tema.</a></li>
-        </ul></div>
-        <form>
-            <p><label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre"></p>
-            <label>¿Te esta resutando sencilla la web del curso?</label>
-            <select><option value="Si">Si.</option>
-            <option value="No">No.</option>
-            <option value="No, pero tampoco muy dificil">No, pero tampoco muy dificil.</option></select>
-            <p><button type="submit">Enviar.</button></p>
-
-        </form>
-        
-
-        
+ <link rel="stylesheet" type="text/css" href="estilos.css"> 
+</head>
 
 
+<body>
+<div class="encabezado">
+  <h1>🌐 Bienvenidos a la web del curso</h1>
+  <button id="modo-toggle">🌙 Oscuro</button>
+</div>
 
+<div class="contenedor">
+  <div class="portada">
+    <img src="mono culo rojo.jpg" alt="Mono de culo rojo">
+  </div>
 
+  <div class="lista">
+    <h2>Temas del curso</h2>
+    <ul>
+      <li><a href="Tema1.html">Tema 1: Introducción a la Tecnología</a></li>
+      <li><a href="Tema2.html">Tema 2: Fundamentos de la Web</a></li>
+      <li><a href="Tema3.html">Tema 3: HTML, CSS y JavaScript</a></li>
+    </ul>
+  </div>
 
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
 
+    <label for="facilidad">¿Te está resultando sencilla la web del curso?</label>
+    <select id="facilidad" name="facilidad">
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+      <option value="medio">No, pero tampoco muy difícil</option>
+    </select>
 
-        <footer>Gracias por utilizar la página.</footer>
-    </body>
-</html>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="boxes">
+    <h2>Ejemplo de Box Model</h2>
+    <div class="box-container">
+      <div class="box">
+        <h3>Profesores guapos</h3>
+        <p>Gregorio.</p>
+      </div>
+      <div class="box">
+        <h3>Profesores feos</h3>
+        <p>Todos los demás.</p>
+      </div>
+      <div class="box">
+        <h3>Profesoras guapas</h3>
+        <p>No hay.</p>
+      </div>
+      <div class="box">
+        <h3>Profesoras que no se duchan</h3>
+        <p>No hay.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Gracias por utilizar la página.  
+  <a href="#">Contacto</a> | <a href="#">Redes Sociales</a>
+</footer>
+
+<script>
+const btn = document.getElementById('modo-toggle');
+const body = document.body;
+
+btn.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  btn.textContent = body.classList.contains('dark') ? '☀️ Claro' : '🌙 Oscuro';
+});
+</script>
+  </body>

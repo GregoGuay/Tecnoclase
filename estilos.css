@@ -1,0 +1,246 @@
+:root {
+  --color-fondo: #f7f9fc;
+  --color-texto: #222;
+  --color-principal: #0078d7;
+  --color-secundario: #e0f7fa;
+  --color-caja1: #d0f0ff;
+  --color-caja2: #ffe0b2;
+  --color-caja3: #c8e6c9;
+  --color-caja4: #f8bbd0;
+  --color-borde: #ccc;
+}
+
+body.dark {
+  --color-fondo: #121212;
+  --color-texto: #f0f0f0;
+  --color-principal: #4dabf7;
+  --color-secundario: #1e1e1e;
+  --color-caja1: #2a2a2a;
+  --color-caja2: #3a2a2a;
+  --color-caja3: #2a3a2a;
+  --color-caja4: #3a2a3a;
+  --color-borde: #444;
+}
+
+/* === ESTILOS GENERALES === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* === ENCABEZADO === */
+.encabezado {
+  background-color: var(--color-principal);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* === BOTÓN MODO OSCURO (ID) === */
+#modo-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: var(--color-principal);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#modo-toggle:hover {
+  background-color: var(--color-secundario);
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.contenedor {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: var(--color-caja1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* === PORTADA === */
+.portada {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portada img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-principal);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portada img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* === LISTA DE TEMAS === */
+.lista ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.lista li {
+  background-color: var(--color-secundario);
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lista li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lista li a {
+  color: var(--color-principal);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.lista li a:hover {
+  text-decoration: underline;
+}
+
+/* === FORMULARIO === */
+input[type="text"], select[name] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  margin-bottom: 15px;
+  font-size: 1em;
+  background-color: var(--color-caja1);
+  color: var(--color-texto);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, select[name]:focus {
+  border-color: var(--color-principal);
+  box-shadow: 0 0 5px rgba(0,120,215,0.3);
+  outline: none;
+}
+
+button {
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background-color: #005fa3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* === BOX MODEL === */
+.boxes {
+  margin-top: 40px;
+}
+
+.boxes h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Colores distintos para cada caja usando pseudo-clases */
+.box:nth-child(1) { background-color: var(--color-caja1); }
+.box:nth-child(2) { background-color: var(--color-caja2); }
+.box:nth-child(3) { background-color: var(--color-caja3); }
+.box:nth-child(4) { background-color: var(--color-caja4); }
+
+.box::before {
+  content: "📦 ";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* === FOOTER MEJORADO === */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 30px;
+}
+
+footer a {
+  color: var(--color-principal);
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+body.dark footer {
+  color: #aaa;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 700px) {
+  .box {
+    flex: 1 1 100%;
+  }
+}
