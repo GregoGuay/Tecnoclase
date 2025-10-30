@@ -251,6 +251,48 @@ body.dark footer {
     flex: 1 1 100%;
   }
 }
+/* 📱 MÓVIL: pantallas menores a 600px */
+@media (max-width: 600px) {
+  .encabezado h1 {
+    font-size: 1.3em;
+  }
+  #modo-toggle {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+  .contenedor {
+    padding: 20px;
+  }
+  .box-container {
+    flex-direction: column; /* Las cajas se apilan una debajo de otra */
+  }
+  .box {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .portada img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* 📲 TABLET: entre 601px y 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contenedor {
+    background-color: #e8f0ff; /* Fondo ligeramente diferente */
+  }
+  .box {
+    flex: 1 1 45%; /* Dos cajas por fila */
+  }
+}
+
+/* 💻 PC: pantallas mayores a 900px */
+@media (min-width: 901px) {
+  .contenedor {
+    background-color: var(--color-caja1); /* Color original */
+  }
+}
 </style> 
 </head>
 
