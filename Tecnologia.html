@@ -2,250 +2,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Tecnología Responsiva</title>
+  <title>Web Tecnología</title>
   <link rel="icon" href="icons8-computadora-16.png" type="image/x-icon">
 
   <style>
-:root {
-  --color-fondo: #f7f9fc;
-  --color-texto: #222;
-  --color-principal: #0078d7;
-  --color-secundario: #e0f7fa;
-  --color-borde: #ccc;
-}
+    /* 🎨 VARIABLES DE COLOR */
+    :root {
+      --color-fondo: #f7f9fc;
+      --color-texto: #222;
+      --color-principal: #0078d7;
+      --color-secundario: #e0f7fa;
+      --color-caja1: #d0f0ff;
+      --color-caja2: #ffe0b2;
+      --color-caja3: #97e399;
+      --color-caja4: #f8bbd0;
+      --color-borde: #ccc;
+    }
 
-/* === MODO OSCURO === */
-body.dark {
-  --color-fondo: #121212;
-  --color-texto: #f0f0f0;
-  --color-principal: #4dabf7;
-  --color-secundario: #1e1e1e;
-  --color-borde: #444;
-}
+    body.dark {
+      --color-fondo: #121212;
+      --color-texto: #f0f0f0;
+      --color-principal: #4dabf7;
+      --color-secundario: #1e1e1e;
+      --color-caja1: #2a2a2a;
+      --color-caja2: #3a2a2a;
+      --color-caja3: #2a3a2a;
+      --color-caja4: #3a2a3a;
+      --color-borde: #444;
+    }
 
-/* === REGLAS GENERALES === */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* === ESTILOS GENERALES === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
 
-body {
-  background: var(--color-fondo);
-  color: var(--color-texto);
-  font-family: 'Segoe UI', Arial, sans-serif;
-  transition: background 0.4s ease, color 0.4s ease;
-}
+    body {
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      transition: background 0.4s ease, color 0.4s ease;
+    }
 
-/* === ENCABEZADO === */
-.encabezado {
-  background-color: var(--color-principal);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
 
-#modo-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: white;
-  color: var(--color-principal);
-  border: none;
-  border-radius: 20px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
+    /* === ENCABEZADO === */
+    .encabezado {
+      background-color: var(--color-principal);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
 
-#modo-toggle:hover {
-  background-color: var(--color-secundario);
-}
+    #modo-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      background-color: white;
+      color: var(--color-principal);
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
 
-/* === CONTENEDOR PRINCIPAL === */
-.contenedor {
-  max-width: 90%;
-  margin: 30px auto;
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
+    #modo-toggle:hover {
+      background-color: var(--color-secundario);
+    }
 
-/* === PORTADA === */
-.portada {
-  text-align: center;
-  margin-bottom: 20px;
-}
+    /* === CONTENEDOR PRINCIPAL === */
+    .contenedor {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: var(--color-caja1);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
 
-.portada img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  border-radius: 50%;
-  border: 4px solid var(--color-principal);
-  transition: transform 0.3s ease;
-}
+    /* === PORTADA === */
+    .portada {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-.portada img:hover {
-  transform: scale(1.05);
-}
+    .portada img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--color-principal);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* === LISTA === */
-.lista ul {
-  list-style: none;
-  padding: 0;
-}
+    .portada img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
 
-.lista li {
-  background-color: var(--color-secundario);
-  margin: 10px 0;
-  padding: 12px 15px;
-  border-radius: 10px;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
+    /* === LISTA DE TEMAS === */
+    .lista ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-.lista li:hover {
-  transform: translateX(5px);
-}
+    .lista li {
+      background-color: var(--color-secundario);
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
 
-.lista a {
-  color: var(--color-principal);
-  font-weight: bold;
-  text-decoration: none;
-}
+    .lista li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-/* === FORMULARIO === */
-form {
-  margin-top: 20px;
-}
+    .lista a {
+      color: var(--color-principal);
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+    /* === FORMULARIO === */
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--color-borde);
+      margin-bottom: 15px;
+      font-size: 1em;
+      background-color: var(--color-caja1);
+      color: var(--color-texto);
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
 
-input[type="text"], select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--color-borde);
-  border-radius: 8px;
-  margin-bottom: 15px;
-  background: var(--color-fondo);
-}
+    input:focus, select:focus {
+      border-color: var(--color-principal);
+      box-shadow: 0 0 5px rgba(0,120,215,0.3);
+      outline: none;
+    }
 
-button {
-  background-color: var(--color-principal);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: all 0.3s ease;
-}
+    button {
+      background-color: var(--color-principal);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-button:hover {
-  background-color: #005fa3;
-}
+    button:hover {
+      background-color: #005fa3;
+      transform: scale(1.03);
+    }
 
-/* === BOXES === */
-.boxes {
-  margin-top: 40px;
-}
+    /* === BOX MODEL === */
+    .boxes {
+      margin-top: 40px;
+    }
 
-.box-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    .box-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.box {
-  flex: 1 1 calc(50% - 20px);
-  min-width: 250px;
-  background-color: var(--color-secundario);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
+    .box {
+      flex: 1 1 calc(50% - 20px);
+      min-width: 250px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.box:hover {
-  transform: translateY(-5px);
-}
+    /* 🎨 Colores distintos */
+    .box:nth-child(1) { background-color: var(--color-caja1); }
+    .box:nth-child(2) { background-color: var(--color-caja2); }
+    .box:nth-child(3) { background-color: var(--color-caja3); }
+    .box:nth-child(4) { background-color: var(--color-caja4); }
 
-/* === BOTÓN VOLVER ARRIBA === */
-#volver-arriba {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: var(--color-principal);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
-  display: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
 
-#volver-arriba:hover {
-  background-color: #005fa3;
-  transform: scale(1.1);
-}
+    /* === BOTÓN FIJO VOLVER ARRIBA === */
+    #volver-arriba {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--color-principal);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #555;
-}
+    #volver-arriba:hover {
+      background-color: #005fa3;
+      transform: scale(1.1);
+    }
 
-/* === RESPONSIVIDAD === */
-@media (max-width: 900px) {
-  .contenedor {
-    max-width: 95%;
-    padding: 20px;
-  }
-  .box {
-    flex: 1 1 100%;
-  }
-}
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 30px;
+    }
 
-@media (max-width: 600px) {
-  .encabezado h1 {
-    font-size: 1.3em;
-  }
+    body.dark footer {
+      color: #aaa;
+    }
 
-  #modo-toggle {
-    position: static;
-    display: block;
-    margin: 10px auto;
-  }
+    /* === RESPONSIVO === */
+    @media (max-width: 600px) {
+      .encabezado h1 { font-size: 1.3em; }
+      #modo-toggle { position: static; display: block; margin: 10px auto; }
+      .contenedor { padding: 20px; }
+      .box-container { flex-direction: column; }
+      .box { flex: 1 1 100%; text-align: center; }
+      .portada img { width: 150px; height: 150px; }
+    }
 
-  .portada img {
-    max-width: 150px;
-  }
-
-  .box {
-    text-align: center;
-  }
-
-  #volver-arriba {
-    bottom: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2em;
-  }
-}
+    @media (min-width: 601px) and (max-width: 900px) {
+      .contenedor { background-color: #e8f0ff; }
+      .box { flex: 1 1 45%; }
+    }
   </style>
 </head>
 
@@ -277,7 +281,7 @@ footer {
       <select id="facilidad" name="facilidad">
         <option value="si">Sí</option>
         <option value="no">No</option>
-        <option value="medio">Más o menos</option>
+        <option value="medio">No, pero tampoco muy difícil</option>
       </select>
 
       <button type="submit">Enviar</button>
@@ -306,30 +310,28 @@ footer {
     </div>
   </div>
 
-  <footer>
-    Gracias por utilizar la página.  
-    <a href="#">Contacto</a> | <a href="#">Redes Sociales</a>
-  </footer>
+  <footer>Gracias por utilizar la página.</footer>
 
+  <!-- BOTÓN FIJO VOLVER ARRIBA -->
   <button id="volver-arriba">↑</button>
 
   <script>
-  const btn = document.getElementById('modo-toggle');
-  const body = document.body;
-  const scrollBtn = document.getElementById('volver-arriba');
+    // 🌙 Modo oscuro
+    const btn = document.getElementById('modo-toggle');
+    const body = document.body;
+    btn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      btn.textContent = body.classList.contains('dark') ? '☀️ Claro' : '🌙 Oscuro';
+    });
 
-  btn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    btn.textContent = body.classList.contains('dark') ? '☀️ Claro' : '🌙 Oscuro';
-  });
-
-  window.addEventListener('scroll', () => {
-    scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-  });
-
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    // ⬆️ Botón "Volver arriba"
+    const scrollBtn = document.getElementById('volver-arriba');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
