@@ -310,6 +310,18 @@ body.dark footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+
+// Volver arriba con animación suave
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 #volver-arriba:hover {
   background-color: #005fa3;
