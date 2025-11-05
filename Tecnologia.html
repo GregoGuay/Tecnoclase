@@ -5,7 +5,8 @@
   <title>Web Tecnología</title>
   <link rel="icon" href="icons8-computadora-16.png" type="image/x-icon">
 
- <style>:root {
+  <style>
+:root {
   --color-fondo: #f7f9fc;
   --color-texto: #222;
   --color-principal: #0078d7;
@@ -61,7 +62,7 @@ p {
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* === BOTÓN MODO OSCURO (ID) === */
+/* === BOTÓN MODO OSCURO === */
 #modo-toggle {
   position: absolute;
   top: 20px;
@@ -204,7 +205,6 @@ button:hover {
   position: relative;
 }
 
-/* Colores distintos para cada caja usando pseudo-clases */
 .box:nth-child(1) { background-color: var(--color-caja1); }
 .box:nth-child(2) { background-color: var(--color-caja2); }
 .box:nth-child(3) { background-color: var(--color-caja3); }
@@ -222,7 +222,7 @@ button:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* === FOOTER MEJORADO === */
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 20px;
@@ -245,13 +245,36 @@ body.dark footer {
   color: #aaa;
 }
 
+/* === BOTÓN FIJO VOLVER ARRIBA === */
+#volver-arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none; /* Oculto al inicio */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#volver-arriba:hover {
+  background-color: #005fa3;
+  transform: scale(1.1);
+}
+
 /* === RESPONSIVO === */
 @media (max-width: 700px) {
   .box {
     flex: 1 1 100%;
   }
 }
-/* 📱 MÓVIL: pantallas menores a 600px */
+
 @media (max-width: 600px) {
   .encabezado h1 {
     font-size: 1.3em;
@@ -265,7 +288,7 @@ body.dark footer {
     padding: 20px;
   }
   .box-container {
-    flex-direction: column; /* Las cajas se apilan una debajo de otra */
+    flex-direction: column;
   }
   .box {
     flex: 1 1 100%;
@@ -277,129 +300,111 @@ body.dark footer {
   }
 }
 
-/* 📲 TABLET: entre 601px y 900px */
 @media (min-width: 601px) and (max-width: 900px) {
   .contenedor {
-    background-color: #e8f0ff; /* Fondo ligeramente diferente */
+    background-color: #e8f0ff;
   }
   .box {
-    flex: 1 1 45%; /* Dos cajas por fila */
+    flex: 1 1 45%;
   }
 }
 
-/* 💻 PC: pantallas mayores a 900px */
 @media (min-width: 901px) {
   .contenedor {
-    background-color: var(--color-caja1); /* Color original */
+    background-color: var(--color-caja1);
   }
 }
-<!-- BOTÓN FIXED -->
-<button id="volver-arriba">Inicio</button>
-#volver-arriba {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: var(--color-principal);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scrollBtn.style.display = 'block';
-  } else {
-    scrollBtn.style.display = 'none';
-  }
-});
-
-// Volver arriba con animación suave
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-#volver-arriba:hover {
-  background-color: #005fa3;
-  transform: scale(1.1);
-}
-</style> 
+  </style>
 </head>
 
-
 <body>
-<div class="encabezado">
-  <h1>🌐 Bienvenidos a la web del curso</h1>
-  <button id="modo-toggle">🌙 Oscuro</button>
-</div>
-
-<div class="contenedor">
-  <div class="portada">
-    <img src="mono culo rojo.jpg" alt="Mono de culo rojo">
+  <div class="encabezado">
+    <h1>🌐 Bienvenidos a la web del curso</h1>
+    <button id="modo-toggle">🌙 Oscuro</button>
   </div>
 
-  <div class="lista">
-    <h2>Temas del curso</h2>
-    <ul>
-      <li><a href="Tema1.html">Tema 1: Introducción a la Tecnología</a></li>
-      <li><a href="Tema2.html">Tema 2: Fundamentos de la Web</a></li>
-      <li><a href="Tema3.html">Tema 3: HTML, CSS y JavaScript</a></li>
-    </ul>
-  </div>
+  <div class="contenedor">
+    <div class="portada">
+      <img src="mono culo rojo.jpg" alt="Mono de culo rojo">
+    </div>
 
-  <form>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+    <div class="lista">
+      <h2>Temas del curso</h2>
+      <ul>
+        <li><a href="Tema1.html">Tema 1: Introducción a la Tecnología</a></li>
+        <li><a href="Tema2.html">Tema 2: Fundamentos de la Web</a></li>
+        <li><a href="Tema3.html">Tema 3: HTML, CSS y JavaScript</a></li>
+      </ul>
+    </div>
 
-    <label for="facilidad">¿Te está resultando sencilla la web del curso?</label>
-    <select id="facilidad" name="facilidad">
-      <option value="si">Sí</option>
-      <option value="no">No</option>
-      <option value="medio">No, pero tampoco muy difícil</option>
-    </select>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
 
-    <button type="submit">Enviar</button>
-  </form>
+      <label for="facilidad">¿Te está resultando sencilla la web del curso?</label>
+      <select id="facilidad" name="facilidad">
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+        <option value="medio">No, pero tampoco muy difícil</option>
+      </select>
 
-  <div class="boxes">
-    <h2>Ejemplo de Box Model</h2>
-    <div class="box-container">
-      <div class="box">
-        <h3>Profesores guapos</h3>
-        <p>Gregorio.</p>
-      </div>
-      <div class="box">
-        <h3>Profesores feos</h3>
-        <p>Todos los demás.</p>
-      </div>
-      <div class="box">
-        <h3>Profesoras guapas</h3>
-        <p>No hay.</p>
-      </div>
-      <div class="box">
-        <h3>Profesoras feas</h3>
-        <p>Todas.</p>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="boxes">
+      <h2>Ejemplo de Box Model</h2>
+      <div class="box-container">
+        <div class="box">
+          <h3>Profesores guapos</h3>
+          <p>Gregorio.</p>
+        </div>
+        <div class="box">
+          <h3>Profesores feos</h3>
+          <p>Todos los demás.</p>
+        </div>
+        <div class="box">
+          <h3>Profesoras guapas</h3>
+          <p>No hay.</p>
+        </div>
+        <div class="box">
+          <h3>Profesoras feas</h3>
+          <p>Todas.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<footer>
-  Gracias por utilizar la página.  
-  <a href="#">Contacto</a> | <a href="#">Redes Sociales</a>
-</footer>
+  <footer>
+    Gracias por utilizar la página.  
+    <a href="#">Contacto</a> | <a href="#">Redes Sociales</a>
+  </footer>
 
-<script>
-const btn = document.getElementById('modo-toggle');
-const body = document.body;
+  <!-- BOTÓN FIXED VOLVER ARRIBA -->
+  <button id="volver-arriba">↑</button>
 
-btn.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  btn.textContent = body.classList.contains('dark') ? '☀️ Claro' : '🌙 Oscuro';
-});
-</script>
-  </body>
+  <script>
+  const btn = document.getElementById('modo-toggle');
+  const body = document.body;
+  const scrollBtn = document.getElementById('volver-arriba');
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    btn.textContent = body.classList.contains('dark') ? '☀️ Claro' : '🌙 Oscuro';
+  });
+
+  // Mostrar/ocultar botón al hacer scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollBtn.style.display = 'block';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  });
+
+  // Volver arriba con animación suave
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  </script>
+</body>
+</html>
